@@ -1,0 +1,135 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td, div {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+  padding: 25px;
+}
+
+p {
+   font-family: Avenir;
+}
+
+section {
+      margin-top: -50px;
+      -webkit-column-count: 3;
+      -webkit-column-gap: 10px;
+      -moz-column-count: 3;
+      -moz-column-gap: 10px;
+      column-count: 3;
+      column-gap:20px;
+}
+
+section .a_product{
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+div.name{
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 25px;
+
+}
+
+section {background-image: url("https://d37wxxhohlp07s.cloudfront.net/s3_images/785375/Blank%20notepad%20-%20large%20grid_inline.png?1346339197");
+    }
+
+header {
+  font-family: oswald;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+div.options {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 5px;
+      border: 1px solid;
+      font-color: black;
+
+}
+
+div.weather {
+      text-align: right;
+}
+
+form {
+     margin-left: 26px;
+}
+
+body {
+     font-size: 10px;
+     margin-left: 20px ;
+}
+
+div {
+    font-family: Avenir;
+    text-transform: italicize;
+    text-align: center;
+    padding: 20px;
+
+}
+
+img {
+    width: 200px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #666; 
+    text-decoration: none;
+    margin: 10px;}
+a:visited { color: #666; }
+a:hover { color: #666; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+  text-transform: uppercase;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

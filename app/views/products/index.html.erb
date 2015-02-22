@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<section>
+    <% @products.each do |product| %>
+        <div class="a_product">
+	        <div class='name'><%= product.name %></div>
+	        <div><%= image_tag product.url %></div>
+	        <div>$<%= product.formatted_price %></div>
+	       <!--  <div><%= image_tag product.image.url()%></div> -->
+	        <div class='options'><%= link_to 'Show', product %></div>
+	        <div class='options'><%= link_to 'Edit', edit_product_path(product) %></div>
+	        <div class='options'><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+	    </div>
+    <% end %>
+</section>
+
+<br>
+
+
+<%= link_to 'New Product', new_product_path %>
+
