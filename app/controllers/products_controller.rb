@@ -12,6 +12,8 @@ class ProductsController < ApplicationController
   def show
       @product = Product.find(params[:id])
       @review = @product.reviews.new
+      @photo = Photo.new
+   
   end
 
   # GET /products/new
@@ -31,6 +33,14 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+
+     if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @product.avatars.create(image: image)
+        }
+      end
+
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
@@ -57,7 +67,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product.destroy
+    @product.delete
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
@@ -72,6 +82,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price_in_cents, :url, :image)
+      params.require(:product).permit(:name, :description, :price_in_cents, :url, :image, :avatar)
     end
 end

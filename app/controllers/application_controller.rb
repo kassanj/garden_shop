@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+  
   helper_method :current_user
 
   def authorize
@@ -13,8 +14,9 @@ class ApplicationController < ActionController::Base
   end
 
   def weather
-    @weather = Weather.new.show
+    @weather = Weather.show('miami')
   end
+
   helper_method :weather
 end
 

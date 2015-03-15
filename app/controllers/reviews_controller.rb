@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authorize 
-  before_action :set_review, only:[:show]
+  before_action :set_review, only:[:show, :destroy]
   # GET /reviews
   # GET /reviews.json
   def index
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to :back, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:comment, :product_id)
+      params.require(:review).permit(:comment, :product_id, :name)
     end
 end

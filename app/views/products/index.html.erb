@@ -6,7 +6,7 @@
 	        <div class='name'><%= product.name %></div>
 	        <div><%= image_tag product.url %></div>
 	        <div>$<%= product.formatted_price %></div>
-	       <!--  <div><%= image_tag product.image.url()%></div> -->
+	        <div><% image_tag product.image.url(:thumb)%></div>
 	        <div class='options'><%= link_to 'Show', product %></div>
 	        <div class='options'><%= link_to 'Edit', edit_product_path(product) %></div>
 	        <div class='options'><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></div>

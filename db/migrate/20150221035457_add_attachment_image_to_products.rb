@@ -8,4 +8,5 @@ class AddAttachmentImageToProducts < ActiveRecord::Migration
   def self.down
     remove_attachment :products, :image
   end
+
 end

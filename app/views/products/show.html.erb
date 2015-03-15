@@ -4,9 +4,8 @@
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
-
-<p> 
-  <%= image_tag @product.image.url (:large) %>
+<p>
+  <% image_tag @product.image.url %>
 </p>
 
 <p>
@@ -15,31 +14,33 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <%= @product.description %><br><br>
 
-<p>
   <strong>Price:</strong>
   $<%= @product.formatted_price %>
 </p>
 
 <p>
   <strong>Reviews:</strong>
+    <% @product.reviews.each do |review| %><br>
+    <%= review.comment %><br>
+    Added on: <%= review.created_at  %>
+  <% end %>
 </p>
 
-<% @product.reviews.each do |review| %>
-	<p>
-	  <%= review.comment %>
-	  <br><br>
-	  Added on: <%= review.created_at  %>
-	</p>
-<% end %>
-
-<p>
+<p align='center'>
   <strong>New Review</strong>
 </p>
 <%= render 'reviews/form' %>
 <br><br>
+
+<p>
+  <% @product.photos.each do |photo| %><br>
+    <%= image_tag photo.avatar.url(:medium)%><br>
+  <% end %>
+</p>
+<%= render 'photos/form' %>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
