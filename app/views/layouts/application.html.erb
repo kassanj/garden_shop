@@ -12,13 +12,12 @@ The Garden Shop
 
 <br>
 <body align='left'>
+<%= number_with_precision(weather['high'], precision: 0, align: 'right') %>&#176;F // <%= weather['condition']%>
 <% if current_user %>
   Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
 <% else %>
    <%= link_to 'Home', '/products' %> | <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> 
 <% end %>
-
-<%= number_with_precision(weather['high'], precision: 0, align: 'right') %>&#176;F // <%= weather['condition']%>
 
 </body>
 

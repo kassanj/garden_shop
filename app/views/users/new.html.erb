@@ -1,4 +1,4 @@
-<h1>Signup!</h1>
+<h1>Sign Up!</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
 
@@ -6,6 +6,12 @@
   Email: <%= f.text_field :email %><br><br>
   Password: <%= f.password_field :password %><br><br>
   Password Confirmation: <%= f.password_field :password_confirmation %><br><br>
+  Role: <%= radio_button_tag(:user, "admin") %>
+		<%= label_tag(:user_admin, "admin") %>
+		<%= radio_button_tag(:user, "customer") %>
+		<%= label_tag(:user_customer, "customer") %>
+<br><br>
+
   <%= f.submit "Submit" %>
 
 <% end %>

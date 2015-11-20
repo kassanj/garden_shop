@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-	def new 
+	def new
 	end
 
 	def create
@@ -10,14 +9,13 @@ class UsersController < ApplicationController
 			redirect_to '/products'
 		else
 			redirect_to '/signup'
-
 		end
 	end
 
 	private 
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_customer, :user_admin)
 	end
 	
 end

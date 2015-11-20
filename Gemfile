@@ -23,8 +23,6 @@ gem "paperclip", "~> 4.2"
 
 gem "nested_form"
 
-gem "spree" 
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -39,7 +37,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'acts_as_shopping_cart', '~> 0.2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
